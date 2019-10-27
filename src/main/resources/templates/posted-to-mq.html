@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <title th:text="#{app.title}"> Posted To MQ </title>
+   <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+   <h1 th:text="#{app.posted-to-mq}" />
+   <table>
+      <tr>
+         <th th:text="#{mqform.environment}" />
+         <th th:text="#{mqform.queueName}" />
+         <th th:text="#{mqform.message}" />
+      </tr>
+      <tr>
+         <td th:text="${mqform.environment}" />
+         <td th:text="${mqform.queueName}" />
+         <td th:text="${mqform.message}" />
+      </tr>
+   </table>
+   <a href="#" th:href="@{/omsdevutils/post-to-mq}" th:text="#{app.post-to-mq}" />
+</body>
+
+</html>

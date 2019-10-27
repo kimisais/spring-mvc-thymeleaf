@@ -1,0 +1,35 @@
+.error{
+    color: red;
+    font-size: 15px;
+}
+.mqform{
+    color: blue;
+    font-size: 15px;
+}
+table {
+    border-collapse: separate;
+}
+
+.rowName {
+	background: lightblue;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-weight: bold;  
+}
+table, th, td {
+	border: 1px black;
+		box-shadow: 1px 1px 1px 1px grey;
+		padding : 8px;
+		margin: 5px;
+} 
+
+.message {
+	width: 800px;
+	height: 400px;
+	text-align: left;
+	vertical-align: text-top;
+}
+
+.buttons {
+	padding: 8px;
+    margin: 5px;
+}

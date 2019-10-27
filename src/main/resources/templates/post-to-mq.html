@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{app.title}">OMS Dev Utils - Post Message to MQ
+</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h1 th:text="#{app.post-to-mq}">Post Message to MQ</h1>
+	<form action="#" th:action="@{/omsdevutils/post-to-mq}"
+		th:object="${mqform}" method="POST">
+		<table>
+			<tr>
+				<td class="rowName" th:text="#{mqform.queueName}" />
+				<td>
+					<select th:field="*{queueName}">
+						<option th:each="queueName : ${allMQNames}" th:value="${queueName}" th:text="${queueName}">MQ Name</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="rowName" th:text="#{mqform.environment}" />
+				<td>
+					<select th:field="*{environment}">
+						<option th:each="environment : ${allEnvironments}" th:value="${environment}" th:text="${environment}">Environment</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="rowName" th:text="#{mqform.message}" />
+				<td>
+					<input class="message" type="text" th:field="*{message}" />
+					<label th:if="${#fields.hasErrors('message')}" th:text="#{error.mq.message}" th:class="'error'" />
+				</td>
+			</tr>
+						
+			<tr>
+				<td colspan="2">
+					<input class="buttons" type="submit" th:value="#{mq.form.submit}" /> 
+					<input class="buttons" type="reset" th:value="#{mq.form.reset}" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
